@@ -1,0 +1,67 @@
+quest-types:
+  run:
+    name: "Marathon"
+    description: "Run a certain distance"
+    unit: "blocks"
+  kill:
+    name: "Hunter"
+    description: "Kill a specific number of mobs"
+    unit: "mobs"
+  mine:
+    name: "Miner"
+    description: "Mine a certain number of blocks"
+    unit: "blocks"
+  craft:
+    name: "Craftsman"
+    description: "Craft a specific number of items"
+    unit: "items"
+
+difficulties:
+  easy:
+    xp-cost: 5
+    goal-range:
+      min: 10
+      max: 50
+    prizes:
+      - "diamond 1-3"
+      - "gold_ingot 5-10"
+      - "experience_bottle 10-20"
+  medium:
+    xp-cost: 10
+    goal-range:
+      min: 50
+      max: 200
+    prizes:
+      - "diamond 3-7"
+      - "emerald 5-10"
+      - "enchanted_book 1-2"
+  hard:
+    xp-cost: 20
+    goal-range:
+      min: 200
+      max: 1000
+    prizes:
+      - "diamond_block 1-3"
+      - "netherite_ingot 1-2"
+      - "enchanted_golden_apple 1-3"
+
+mobs:
+  - zombie
+  - skeleton
+  - creeper
+  - spider
+  - enderman
+
+blocks:
+  - stone
+  - coal_ore
+  - iron_ore
+  - gold_ore
+  - diamond_ore
+
+items:
+  - wooden_pickaxe
+  - stone_sword
+  - iron_chestplate
+  - bow
+  - arrow
