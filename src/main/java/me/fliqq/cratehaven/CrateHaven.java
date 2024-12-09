@@ -19,7 +19,7 @@ public class CrateHaven extends JavaPlugin
         getCommand("setcrate").setExecutor(new SetCrateCommand(crateManager));
         getCommand("givekey").setExecutor(new GiveKeyCommand(crateManager));
         getCommand("showcraterewards").setExecutor(new ShowCrateRewardsCommand(crateManager));
-        getServer().getPluginManager().registerEvents(new CrateListener(crateManager), this);
+        getServer().getPluginManager().registerEvents(new CrateListener(crateManager, this), this);
         messages();
     }
         

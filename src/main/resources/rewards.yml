@@ -1,5 +1,5 @@
 crates:
-  vote_crate:
+  vote:
     display_name: "&4Vote Crate"
     key_item:
       material: STICK
@@ -41,17 +41,69 @@ crates:
           display_name: "&bEmerald"
           lore:
             - "&7A precious gem."
+        - type: ITEM
+          material: IRON_INGOT
+          amount: 5
+          display_name: "&fIron Ingot"
+          lore:
+            - "&7Useful for crafting."
+        - type: COMMAND
+          command: "give %player% diamond 5"
+          display_name: "&b5 Diamonds"
+        - type: PERMISSION
+          permission: "cratehaven.commonreward"
+          display_name: "&aCommon Reward Permission"
+
       uncommon:
         - type: COMMAND
           command: "say %player% has opened a crate!"
+          display_name: "&8Broadcast opened a crate"
+        - type: ITEM
+          material: GOLDEN_APPLE
+          amount: 2
+          display_name: "&6Golden Apples"
+        - type: PERMISSION
+          permission: "cratehaven.openuncommon"
+          display_name: "&ePermission to open uncommon crates"
+
       rare:
+        - type: ITEM
+          material: NETHERITE_SWORD
+          amount: 1
+          display_name: "&4Netherite Sword"
+        - type: COMMAND
+          command: "give %player% experience 200"
+          display_name: "&eGive 200 Experience"
         - type: PERMISSION
           permission: "cratehaven.openrare"
+          display_name: "&5Permission to open rare crates"
 
-  store_crate:
+      epic:
+        - type: ITEM
+          material: ENCHANTED_BOOK
+          amount: 1
+          display_name: "&9Enchanted Book"
+        - type: COMMAND
+          command: "give %player% nether_star 3"
+          display_name: "&c3 Nether Stars"
+        - type: PERMISSION
+          permission: "cratehaven.openepic"
+
+      legendary:
+        - type: ITEM
+          material: DRAGON_EGG
+          amount: 1
+          display_name: "&6Dragon Egg"
+        - type: COMMAND
+          command: "give %player% diamond_block 5"
+          display_name: "&b5 Diamond Blocks"
+        - type: PERMISSION
+          permission: "cratehaven.openlegendary"
+
+  store:
     display_name: "Store Crate"
     key_item:
-      material: GOLDEN_KEY
+      material: APPLE
       display_name: "&6Store Key"
       enchant_glow: true
       lore:
@@ -73,6 +125,7 @@ crates:
       legendary:
         probability: 2
         color: GOLD
+
     rewards:
       common:
         - type: ITEM
@@ -87,17 +140,22 @@ crates:
           display_name: "&6Gold Ingot"
           lore:
             - "&7Shiny and valuable."
+        - type: COMMAND
+          command: "give %player% iron_block 1"
+          display_name: "&fGet Iron Block"
+
       uncommon:
         - type: COMMAND
           command: "give %player% diamond 1"
+          display_name: "Get 1 Diamond from Command"
+
       rare:
         - type: PERMISSION
           permission: "cratehaven.openrare.store"
+          display_name: "&5Permission to open rare store"
+
       epic:
         - type: ITEM
           material: DIAMOND_HELMET
           amount: 1
           display_name: "&bDiamond Helmet"
-          enchants:
-            - type: minecraft:protection
-              level: 2

@@ -77,6 +77,7 @@ public class SetCrateCommand implements CommandExecutor {
                     hologram.setMarker(true);
 
                     player.sendMessage("Crate set successfully!");
+                    player.sendMessage("Setting crate ID: " + crate.getId());
                     return true;
                 }
             }

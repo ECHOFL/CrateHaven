@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import me.fliqq.cratehaven.manager.CrateManager;
 import me.fliqq.cratehaven.object.Crate;
 import me.fliqq.cratehaven.object.Key; // Assuming you have a Key class
+import net.kyori.adventure.text.Component;
 
 public class GiveKeyCommand implements CommandExecutor {
 
@@ -48,8 +49,7 @@ public class GiveKeyCommand implements CommandExecutor {
                 Key key = crate.getKey();
                 ItemStack keyItem = createKeyItem(key, crate);
                 player.getInventory().addItem(keyItem);
-                player.sendMessage("You have been given a " + key.getDisplayName() + "!");
-
+                player.sendMessage(Component.text("You have been given a ").append(key.getDisplayName()));
                 return true;
             }
         }

@@ -8,6 +8,6 @@ import net.kyori.adventure.text.format.NamedTextColor;
 @Getter
 public class Rarity {
     final String id;
-    final long proba;
+    final double proba;
     final NamedTextColor color;
 }

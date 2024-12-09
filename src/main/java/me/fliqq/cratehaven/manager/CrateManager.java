@@ -104,7 +104,7 @@ public class CrateManager {
         for (String rarityId : raritiesConfig.getKeys(false)) {
             ConfigurationSection rarityConfig = raritiesConfig.getConfigurationSection(rarityId);
             if (rarityConfig == null) continue;
-            long probability = rarityConfig.getLong("probability", 0);
+            double probability = rarityConfig.getLong("probability", 0);
             String colorString = rarityConfig.getString("color", "WHITE");
             NamedTextColor color = getNamedTextColor(colorString);
             if (color == null) plugin.getLogger().warning("Invalid color: " + colorString);
@@ -244,22 +244,37 @@ public class CrateManager {
         return crates;
     }
 
-    public boolean isCrate(Block block){
-        
+
+    public boolean isCrate(Block block) {
+        if (block.getType() == Material.ENDER_CHEST) {
+            BlockState state = block.getState();
+            if (state instanceof EnderChest) {
+                EnderChest enderChest = (EnderChest) state;
+                NamespacedKey key = new NamespacedKey("cratehaven", "crate_id");
+                return enderChest.getPersistentDataContainer().has(key, PersistentDataType.STRING);
+            }
+        }
         return false;
     }
-
-    public Crate getCrateByBlock(Block block) {
-        BlockState state = block.getState();
-        if (state instanceof EnderChest) {
-            EnderChest enderChest = (EnderChest) state;
-            NamespacedKey key = new NamespacedKey("cratehaven", "crate_id"); 
-            for(Crate crate : crates.keySet()){
-                if(crate.getId() == enderChest.getPersistentDataContainer().get(key, PersistentDataType.STRING)){
-                    return crate;
+    
+    public Crate getCrate(Block block) {
+        if (block.getType() == Material.ENDER_CHEST) {
+            BlockState state = block.getState();
+            if (state instanceof EnderChest) {
+                EnderChest enderChest = (EnderChest) state;
+                NamespacedKey key = new NamespacedKey("cratehaven", "crate_id");
+                
+                if (enderChest.getPersistentDataContainer().has(key, PersistentDataType.STRING)) {
+                    String crateId = enderChest.getPersistentDataContainer().get(key, PersistentDataType.STRING);
+                    
+                    for (Crate crate : crates.keySet()) {
+                        if (crate.getId().equals(crateId)) {
+                            return crate; // Return the matching crate
+                        }
+                    }
                 }
             }
         }
-        return null;
+        return null; // Return null if no crate is found
     }
 }
