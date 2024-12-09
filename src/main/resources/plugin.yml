@@ -4,4 +4,7 @@ main: me.fliqq.cratehaven.CrateHaven
 description: Extandable Crates Plugin
 author: Fliqq
 api-version: "1.21.3"
-softdepend: []
+commands:
+  showcraterewards:
+  setcrate:
+  givekey:

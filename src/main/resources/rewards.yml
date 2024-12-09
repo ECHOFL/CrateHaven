@@ -1,0 +1,103 @@
+crates:
+  vote_crate:
+    display_name: "&4Vote Crate"
+    key_item:
+      material: STICK
+      display_name: "&7Vote Key"
+      enchant_glow: true
+      lore:
+        - "Vote"
+        - "Key"
+    rarity_tiers:
+      common:
+        probability: 60
+        color: GRAY
+      uncommon:
+        probability: 30
+        color: GREEN
+      rare:
+        probability: 8
+        color: BLUE
+      epic:
+        probability: 1.8
+        color: LIGHT_PURPLE
+      legendary:
+        probability: 0.2
+        color: GOLD
+    rewards:
+      common:
+        - type: ITEM
+          material: DIAMOND_SWORD
+          amount: 1
+          display_name: "&bSharp Sword"
+          enchants:
+            - type: minecraft:sharpness
+              level: 3
+            - type: minecraft:unbreaking
+              level: 2
+        - type: ITEM
+          material: EMERALD
+          amount: 1
+          display_name: "&bEmerald"
+          lore:
+            - "&7A precious gem."
+      uncommon:
+        - type: COMMAND
+          command: "say %player% has opened a crate!"
+      rare:
+        - type: PERMISSION
+          permission: "cratehaven.openrare"
+
+  store_crate:
+    display_name: "Store Crate"
+    key_item:
+      material: GOLDEN_KEY
+      display_name: "&6Store Key"
+      enchant_glow: true
+      lore:
+        - "Purchase"
+        - "Key"
+    rarity_tiers:
+      common:
+        probability: 50
+        color: GRAY
+      uncommon:
+        probability: 25
+        color: GREEN
+      rare:
+        probability: 15
+        color: BLUE
+      epic:
+        probability: 8
+        color: LIGHT_PURPLE
+      legendary:
+        probability: 2
+        color: GOLD
+    rewards:
+      common:
+        - type: ITEM
+          material: IRON_INGOT
+          amount: 5
+          display_name: "&fIron Ingot"
+          lore:
+            - "&7Useful for crafting."
+        - type: ITEM
+          material: GOLD_INGOT
+          amount: 2
+          display_name: "&6Gold Ingot"
+          lore:
+            - "&7Shiny and valuable."
+      uncommon:
+        - type: COMMAND
+          command: "give %player% diamond 1"
+      rare:
+        - type: PERMISSION
+          permission: "cratehaven.openrare.store"
+      epic:
+        - type: ITEM
+          material: DIAMOND_HELMET
+          amount: 1
+          display_name: "&bDiamond Helmet"
+          enchants:
+            - type: minecraft:protection
+              level: 2
